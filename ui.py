@@ -215,7 +215,8 @@ class AppInterface:
 
     # Calls ChatGPT OpenAI API to display text on screen
     def call_workoutprogram(self):
-        self.change_workout_text("Workout Program \n" + chatgpt(self.training_style, self.body_focus, self.rep_range))
+        result = chatgpt(self.training_style, self.body_focus, self.rep_range)
+        self.change_workout_text(f"Workout Program \n{result}")
 
     # Changes prompt for ChatGPT Training Style
     def change_style(self, style):
